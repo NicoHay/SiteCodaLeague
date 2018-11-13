@@ -1,0 +1,448 @@
+  /* ///////////////////////////////////////// */
+ /* ///////////////// HOME ////////////////// */
+/* ///////////////////////////////////////// */
+
+.home-container {
+  grid-row: 2;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  margin: 10px 0 -30px 0px;
+}
+
+article {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+article h1 {
+  font-size: 16px;
+  color: #3E85DD;
+  text-align: right;
+  width: 100%;
+  margin-left: -10px;
+  margin-top: -10px;
+  padding-right: 20px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#d4d4d4), to(transparent));
+  background-image: linear-gradient(to bottom, #d4d4d4, transparent);
+  line-height: 18px;
+}
+
+a.news:hover article h1{
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(transparent));
+  background-image: linear-gradient(to bottom, #ffffff, transparent);
+}
+
+
+/* Outside Boxes positionning & Shape */
+
+a.news {
+  grid-row: 1/4;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+#newscontent1{
+  grid-column: 1/2;
+}
+
+#newscontent2{
+  grid-column: 2/3;
+}
+
+#imagebox1 {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0 80%);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 80%);
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column: 1;
+}
+
+#contentbox1 {
+  grid-column: 1;
+  grid-row: 2/5;
+  -webkit-clip-path: polygon(0 31%, 100% 1%, 100% 100%, 0 100%);
+  clip-path: polygon(0 31%, 100% 1%, 100% 100%, 0 100%);
+}
+
+#imagebox2{
+  grid-column: 1;
+  grid-row: 1/2;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 100%);
+}
+
+#contentbox2 {
+  grid-column: 1;
+  grid-row: 1/5;
+  grid-row-end: 5;
+  -webkit-clip-path: polygon(0 33.5%, 100% 14%, 100% 100%, 0 100%);
+  clip-path: polygon(0 33.5%, 100% 14%, 100% 100%, 0 100%);
+}
+
+#presentation {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+
+/* Inside Content, Position & Shape for each boxes */
+#image1 {
+  bottom: 13px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0 80%);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 80%);
+  background: url(../img/001.jpg) no-repeat center fixed;
+  background-size: cover;
+  cursor: pointer;
+}
+
+#content1 {
+  display: block;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  top: 8px;
+  -webkit-clip-path: polygon(0 31%, 100% 1%, 100% 100%, 0 100%);
+  clip-path: polygon(0 31%, 100% 1%, 100% 100%, 0 100%);
+  padding: 10px;
+  float: right;
+}
+
+#image2 {
+  bottom: 8px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 37%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 37%, 0 100%);
+  cursor: pointer;
+  background: url(../img/001.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+
+#content2 {
+  top: 8px;
+  -webkit-clip-path: polygon(0 33.5%, 100% 14%, 100% 100%, 0 100%);
+  clip-path: polygon(0 33.5%, 100% 14%, 100% 100%, 0 100%);
+}
+
+#content-presentation {
+  padding: 10px;
+ }
+
+
+/* Overlay on First Box Image...*/
+#image1:before{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url(../img/overlay2.svg);
+  background-position: 150px 150px;
+  margin: -5px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  background-color: rgba(219, 83, 29, 0.5);
+}
+/*...with Hover Position */
+#newscontent1:hover #image1:before{
+  background-position: 100px 100px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  background-color: rgba(219, 83, 29, 0.2);
+}
+
+/* Hidden Shape on top of Second Box Pushing Content Diagonally */
+#content1:before {
+  content: "";
+  display: block;
+  float: left;
+  position: relative;
+  height: 100px;
+  width: 100%;
+  background: transparent;
+  -webkit-clip-path: polygon(0px 0px, 100% 0px, 100.00% 0%, 0px 84%);
+          clip-path: polygon(0px 0px, 100% 0px, 100.00% 0%, 0px 84%);
+  -webkit-shape-outside: polygon(0px 0px, 100% 0px, 100.00% 0%, 0px 84%);
+          shape-outside: polygon(0px 0px, 100% 0px, 100.00% 0%, 0px 84%);
+}
+
+/* Black Corner on Bottom Right of Second Div with Label...*/
+#content1:after,
+#content2:after {
+    content: "more...";
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    height: 40px;
+    width: 100px;
+    background: black;
+    -webkit-clip-path: polygon(100% 0px, 100% 100%, 0px 100%);
+            clip-path: polygon(100% 0px, 100% 100%, 0px 100%);
+    margin: -15px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    font-size: 12px;
+    cursor: pointer;
+}
+/*...with Hover Position */
+#newscontent1:hover #content1:after,
+#newscontent2:hover #content2:after{
+  margin: 0;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+/* Blue Color and Overlay on third Box */
+#image2:before{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(62, 134, 221, 0.5);
+  background-image: url(../img/overlay1.svg);
+  background-position: 70px;
+  margin: -5px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+/*with Hover*/
+#newscontent2:hover #image2:before {
+  background-position: 0px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: rgba(62, 134, 221, 0.2);
+}
+
+/**/
+#content2:before {
+  content: "";
+  display: block;
+  float: left;
+  position: relative;
+  height: 150px;
+  width: 100%;
+  background: transparent;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 37%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 37%, 0 100%);
+  -webkit-shape-outside: polygon(0 0, 100% 0, 100% 37%, 0 100%);
+          shape-outside: polygon(0 0, 100% 0, 100% 37%, 0 100%);
+}
+
+
+/* Comic Shape for News */
+a.b2boom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+    left: -78px;
+    bottom: 30px;
+    height: 130px;
+    width: 164px;
+    z-index: 1000;
+    grid-column-start: 2;
+    grid-row-start: 3;
+    position: relative;
+    background-image: url(../img/boom.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-decoration: none;
+    z-index: 10;
+    border-radius: 30%;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+a.b2boom:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.b2boom span {
+  color: white;
+  font-weight: bolder;
+  font-size: 28px;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+  font-style: italic;
+  text-shadow: 3px 5px 0 black;
+  height: 100%;
+  width: 100%;
+  line-height: 130px;
+  text-align: center;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  border-radius: 50%;
+}
+
+.b2boom span:hover {
+  font-size: 30px;
+  font-style: italic;
+  text-shadow: 6px 6px 0 black;
+  -webkit-transform: rotate(-375deg) scale(1.2);
+          transform: rotate(-375deg) scale(1.2);
+  text-shadow: 2px 3px 0 black;
+}
+/* End comic Shape for News */
+
+
+/* Hidden Object Pushing Text */
+.obj {
+  display: inline-block;
+  position: relative;
+  background: transparent;
+}
+
+#content1 .obj {
+  height: 150px;
+  width: 60px;
+  float: right;
+  -webkit-shape-outside: circle(57.77% at 113.33% 46.67%);
+          shape-outside: circle(57.77% at 113.33% 46.67%);
+}
+
+#content2 .obj {
+  height: 130px;
+  width: 175px;
+  float: left;
+  -webkit-shape-outside: circle(33.83% at -0.59% 71.00%);
+          shape-outside: circle(33.83% at -0.59% 71.00%);
+  margin-top: 120px;
+}
+/* End Hidden Objects */
+
+
+  /* /////////////////////////////////////////// */
+ /* /////////// MEDIA QUERY - TABLET ////////// */
+/* /////////////////////////////////////////// */
+
+@media screen and (max-width: 960px) {
+
+    /*HOME TABLET*/
+    .home-container{
+      grid-template-rows: repeat(5, 1fr);
+    }
+
+    a.news {
+      grid-row: 3/6;
+    }
+
+    #newscontent1 {
+      grid-column: 1/3;
+    }
+
+    #newscontent2{
+      grid-column: 3/5;
+    }
+
+    #imagebox1, #contentbox1 {
+      grid-column: 1/3;
+    }
+
+    #presentation{
+      grid-column: 1/5;
+      grid-row: 1/3;
+    }
+
+    .b2boom {
+      grid-column-start: 3;
+      grid-row-start: 5;
+    }
+    /*End Home Tablet*/
+
+  }/* /////////// END MEDIA QUERY TABLET //////////// */
+
+
+    /* /////////////////////////////////////////// */
+   /* ///////// MEDIA QUERY - MOBILE //////////// */
+  /* /////////////////////////////////////////// */
+  @media screen and (max-width: 567px) {
+
+    /*HOME PAGE MOBILE*/
+    .home-container {
+      grid-template-rows: repeat(8, 1fr);
+      margin-bottom: 20px;
+    }
+
+    #newscontent1 {
+    grid-row: 3/6
+    }
+
+    #newscontent2{
+      grid-row: 6/9;
+    }
+
+    #newscontent1, #newscontent2 {
+      grid-column: 1/5;
+    }
+
+    .b2boom {
+      grid-column-start: 2;
+      grid-row-start: 6;
+      top: -60px;
+  }
+
+    #presentation {
+      grid-row: 1/3;
+      -webkit-clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 100%);
+              clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 100%);
+    }
+
+    #content1 .obj {
+      height: 100%;
+      width: 100%;
+      -webkit-shape-outside: circle(90px at 18.55% 216px);
+              shape-outside: circle(90px at 18.55% 216px);
+      float: left;
+    }
+
+    #content-presentation{
+      -webkit-clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 100%);
+              clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 100%);
+    }
+
+    .home-container:before{
+      content: "Presentation :";
+      color: #FFB94B;
+      text-shadow: 2px 3px 0 #db541d;
+      font-size: 18px;
+      top: 105px;
+      line-height: 50px;
+      position: absolute;
+      z-index: 10;
+      left: 35px;
+      background: -webkit-gradient(linear, left bottom, left top, from(#f6f5d3), color-stop(#f6f5d3), color-stop(#fff), color-stop(#fff), color-stop(transparent), to(transparent));
+      background: linear-gradient(to top, #f6f5d3, #f6f5d3, #fff, #fff, transparent, transparent);
+      padding: 0 10px;
+      -webkit-clip-path: polygon(3% 0, 100% 0, 96% 100%, 0 100%);
+              clip-path: polygon(3% 0, 100% 0, 96% 100%, 0 100%);
+      height: 40px;
+    }
+
+    .home-container h1.title{display: none;}
+    #content2 .obj {display: none;}
+
+  /*End Home Page Mobile*/
+
+}/* /////////// END MEDIA QUERY MOBILE //////////// */

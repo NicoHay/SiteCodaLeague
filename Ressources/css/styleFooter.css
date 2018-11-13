@@ -1,0 +1,144 @@
+  /* ///////////////////////////////////////// */
+ /* //////////////// FOOTER ///////////////// */
+/* ///////////////////////////////////////// */
+
+.footer-container {
+    position: absolute;
+    width: 100%;
+    height: 115px;
+    z-index: 0;
+    -webkit-clip-path: polygon(55% 13%, 89% 19%, 100% 8%, 100% 100%, 0 100%, 0 0, 29% 24%);
+    clip-path: polygon(55% 13%, 89% 19%, 100% 8%, 100% 100%, 0 100%, 0 0, 29% 24%);
+    overflow: hidden;
+    background: #000;
+    bottom: -1px;
+    grid-row: 4/5;
+  }
+
+  #footerC {
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    position: absolute;
+    top: 2px;
+    width: 100%;
+    height: 120px;
+    background: #3e85dd;
+    -webkit-clip-path: polygon(55% 13%, 89% 19%, 100% 8%, 100% 100%, 0 100%, 0 0, 29% 24%);
+    clip-path: polygon(55% 13%, 89% 19%, 100% 8%, 100% 100%, 0 100%, 0 0, 29% 24%);
+    z-index: 0;
+    padding-top: 5px;
+  }
+
+  #footerC:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/overlay1vert.svg);
+    background-position: center top;
+    background-repeat: repeat-x;
+    margin: -10px;
+    opacity: 0.2;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+
+  #footerC a {
+    background-color: black;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+
+  #footerC a:hover {
+    background-color: #DB541D;
+    fill: white;
+    height: 75px;
+    width: 75px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+
+  .bulle1-footer {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    -ms-flex-item-align: center;
+        align-self: center;
+    justify-self: center;
+    -webkit-clip-path: polygon(8% 19%, 100% 3%, 100% 85%, 69% 84%, 78% 100%, 45% 83%, 0 80%);
+    clip-path: polygon(8% 19%, 100% 3%, 100% 85%, 69% 84%, 78% 100%, 45% 83%, 0 80%);
+    z-index: 20;
+  }
+
+  .bulle2-footer {
+    width: 60px;
+    height: 60px;
+    -ms-flex-item-align: center;
+        align-self: center;
+    justify-self: center;
+    -webkit-clip-path: polygon(14% 15%, 94% 25%, 100% 76%, 66% 82%, 43% 100%, 48% 86%, 0 97%);
+    clip-path: polygon(14% 15%, 94% 25%, 100% 76%, 66% 82%, 43% 100%, 48% 86%, 0 97%);
+  }
+
+  #facebook {
+    grid-column: 2;
+    background-image: url("../icons/fb.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    fill: #000;
+  }
+
+  #git {
+    grid-column: 3;
+    background-image: url("../icons/git.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    fill: #000;
+  }
+
+  #coda {
+    grid-column: 4;
+    background-image: url("../icons/simplon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    fill: #000;
+  }
+
+  #connexion {
+    grid-column: 5;
+    background-image: url("../icons/lock.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    fill: #000;
+  }
+
+
+  /* /////////////////////////////////////////// */
+ /* /////////// MEDIA QUERY - TABLET ////////// */
+/* /////////////////////////////////////////// */
+@media screen and (max-width: 960px) {
+}/* /////////// END MEDIA QUERY TABLET //////////// */
+
+
+  /* /////////////////////////////////////////// */
+ /* ///////// MEDIA QUERY - MOBILE //////////// */
+/* /////////////////////////////////////////// */
+@media screen and (max-width: 567px) {
+
+#footerC {
+    background: #DB541E;
+  }
+
+  #footerC a:hover {
+    background-color: #3E85DD;
+    fill: white;
+    height: 75px;
+    width: 75px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+
+}/* /////////// END MEDIA QUERY MOBILE //////////// */

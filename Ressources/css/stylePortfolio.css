@@ -1,0 +1,55 @@
+#containerPortfolio{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#projet{
+display: grid;
+grid-template-columns: 20px 1fr 1fr 20px;
+grid-template-rows: 20px 1fr 1fr 1fr 1fr 1fr 20px;
+grid-gap: 20px;
+background-color: #fff;
+border: solid 4px #000;
+width: 90%;
+height: 90%;
+margin: 0 auto;
+}
+
+#photoProjet{
+  grid-column: 2;
+  grid-row: 2 / span 5;
+  border: solid 4px #000;
+}
+
+
+#titreProjet{
+  grid-column: 3;
+  grid-row: 2;
+  background-color: red;
+}
+
+#txtProjet{
+  grid-column: 3;
+  grid-row: 3;
+  background-color: orange;
+}
+
+#langages{
+  grid-column: 3;
+  grid-row: 4;
+  background-color: green;
+}
+
+
+#team{
+  grid-column: 3;
+  grid-row: 5;
+  background-color: red;
+}
+
+
+#lienProjet{
+  grid-column: 3;
+  grid-row: 6;
+  background-color: green;
+}

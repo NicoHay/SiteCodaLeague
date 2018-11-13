@@ -1,0 +1,185 @@
+/* DESKTOP */
+
+#container_Profils{
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: auto;
+width: 100%;
+margin: 0 auto;
+grid-gap: 5px;
+padding: 20px 0;
+}
+
+#container_Profils a{
+text-decoration: none;
+}
+
+.nameProfil h1{
+    font-size: 24px;
+    color: #000;
+    line-height: 30px;
+    text-shadow: 2px 3px 0 white;
+    padding: 0 10px;
+  }
+
+.nameProfil h2{
+    font-family: badaboom-pro,sans-serif;
+    font-size: 28px;
+    color: #FFFAD5;
+    margin-top: 5px;
+    line-height: 25px;
+    font-style: italic;
+    text-shadow: 0 0 10px black;
+}
+
+/* Conteneur profil */
+
+.profil {
+position: relative;
+-webkit-clip-path: polygon(5% 0, 100% 5%, 95% 100%, 0 95%);
+        clip-path: polygon(5% 0, 100% 5%, 95% 100%, 0 95%);
+width: 100%;
+height: 400px;
+overflow: hidden;
+background: #000;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+-webkit-box-shadow: inset 0 0 30px black;
+        box-shadow: inset 0 0 30px black;
+transition: all .5s ease;
+}
+
+.profil:before {
+  content: '';
+  -webkit-clip-path: polygon(5% 0, 100% 5%, 95% 100%, 0 95%);
+          clip-path: polygon(5% 0, 100% 5%, 95% 100%, 0 95%);
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  right: 5px;
+  left: 5px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-box-shadow: inset 0 0 30px white;
+          box-shadow: inset 0 0 30px white;
+  background-image: url(../img/overlay3.svg);
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+}
+
+.profil:hover:before {
+  background-image: url(../img/overlay3w.svg);
+}
+
+.profil .imgProfil {
+display: block;
+width: 100%;
+}
+
+
+/* Overlay profil*/
+.profil .hoverProfil{
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+ opacity: 0;
+ background-color: rgba(255, 250, 213, 0.3);
+ -webkit-clip-path: polygon(5% 0, 100% 5%, 95% 100%, 0 95%);
+         clip-path: polygon(5% 0, 100% 5%, 95% 100%, 0 95%);
+ -webkit-transition: all .5s ease-in-out;
+ transition: all .5s ease-in-out;
+}
+
+.profil .normal{
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  right: 5px;
+  left: 5px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: inset 0 0 30px black;
+          box-shadow: inset 0 0 30px black;
+  -webkit-clip-path: polygon(5% 0, 100% 5%, 95% 100%, 0 95%);
+          clip-path: polygon(5% 0, 100% 5%, 95% 100%, 0 95%);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.profil .normal:before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url(../img/overlay1.svg);
+  background-position: 100px 200px;
+  background-size: auto;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.profil:hover .normal:before{
+  background-image: url(../img/overlay1w.svg);
+  background-position: -100px -200px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.nameProfil{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    height: 100%;
+}
+
+.profil:hover .hoverProfil {
+  opacity: 1;
+}
+
+
+.profil:hover .normal {
+ opacity: 0.5;
+}
+
+
+
+/* /////////////////////////////////////////// */
+/* /////////// MEDIA QUERY - TABLET ////////// */
+/* /////////////////////////////////////////// */
+
+@media screen and (max-width: 960px) {
+  .profil{
+    height: 200px;
+  }
+
+}/* /////////// END MEDIA QUERY TABLET //////////// */
+
+
+/* /////////////////////////////////////////// */
+/* ///////// MEDIA QUERY - MOBILE //////////// */
+/* /////////////////////////////////////////// */
+@media screen and (max-width: 567px) {
+
+  #container_Profils{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}

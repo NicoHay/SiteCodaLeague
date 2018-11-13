@@ -1,0 +1,114 @@
+/* Pop Up */
+
+#containerProfilUser{
+display: grid;
+grid-template-columns: 1fr 1fr ;
+padding-left: 30px;
+padding-right: 30px;
+grid-template-rows: auto;
+grid-gap: 20px;
+background-color: #f6f5d3;
+border: solid 4px #000;
+width: 90%;
+margin: 0 auto;
+margin-top: 30px;
+padding-bottom: 30px;
+}
+
+#photoProfil{
+  grid-column: 1;
+  margin-top: 30px;
+  height: 250px;
+  border: solid 4px #000;
+  background-repeat: no-repeat;
+}
+
+#infoUser{
+  grid-column: 1;
+    grid-row: 2;
+    display: grid;
+    grid-template-rows: 1fr 1fr 2fr 1fr;
+}
+
+#nomProfil{
+  grid-column: 1;
+}
+
+#pseudoProfil{
+  grid-column: 1;
+}
+
+
+#txtProfil{
+  grid-column: 1;
+}
+
+#emailProfil{
+  grid-column: 1;
+  padding-top: 20px;
+}
+
+
+#pictoProfil{
+  grid-column: 1;
+  background-color: green;
+}
+
+
+#containerCompetences .title{
+  top: -30px;
+}
+#containerCompetences{
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  grid-column: 2;
+  grid-row: 1/4;
+  padding: 10px;
+}
+
+.comp-line{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.comp-line div{
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#pictoLangage{
+  grid-column: 2;
+  background-size: 50px;
+  height:50px;
+  width: 50px;
+  background-repeat: no-repeat;
+}
+
+#skillsName{
+  grid-column: 3;
+
+}
+
+#valeurSkills{
+  grid-column: 4;
+
+}
